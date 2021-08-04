@@ -1,0 +1,6 @@
+[10-Dec-2012 22:57:58 America/New_York] PHP Parse error:  syntax error, unexpected T_EXIT, expecting ',' or ';' in /home/cirashea/public_html/gabmaster/dataPage.php on line 45
+[10-Dec-2012 22:58:13 America/New_York] PHP Parse error:  syntax error, unexpected T_EXIT, expecting ',' or ';' in /home/cirashea/public_html/gabmaster/dataPage.php on line 45
+[10-Dec-2012 22:59:23 America/New_York] PHP Parse error:  syntax error, unexpected T_EXIT, expecting ',' or ';' in /home/cirashea/public_html/gabmaster/dataPage.php on line 45
+[10-Dec-2012 23:02:23 America/New_York] PHP Parse error:  syntax error, unexpected T_EXIT, expecting ',' or ';' in /home/cirashea/public_html/gabmaster/dataPage.php on line 45
+[10-Dec-2012 23:35:56 America/New_York] PHP Warning:  require(Query.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/cirashea/public_html/gabmaster/dataPage.php on line 2
+[10-Dec-2012 23:35:56 America/New_York] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'Query.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/cirashea/public_html/gabmaster/dataPage.php on line 2

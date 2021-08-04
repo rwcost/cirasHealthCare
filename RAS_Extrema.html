@@ -1,0 +1,82 @@
+<!--
+  Author: GabMaster, CIRAS Site
+  
+  Displays extrema (min, max, average) for CIRAS in a "Column-Chart".
+  Goal: 3 bars (min, max, avg) per month; 1 graph per year.
+  Page Name: "ciRasBarCharts/RAS_Extrema.html" (Full Path: www.cirasheartcare.com/gabmaster/ciRasBarCharts/RAS_Extrema.html)
+
+  For the RAS, a percentage is calculated which determines the chance of a patient
+  developing a cardiovascular disease within the next ten years.
+  "High", "Moderate", and "Low" risks are interpreted as follows:
+  Range: 0-100%
+  High RAS: > 20%
+  Moderate RAS: 10-20%
+  Low RAS: < 10%
+  See: <http://www.patient.co.uk/health/Cardiovascular-Health-Risk-Assessment.htm>
+ -->
+
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>  
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      		var USERID=$("#userid").val();
+		var userid = document.getElementById('userid').value;
+		
+		$.getJSON('/gabmaster/dataPage.php',{userid:USERID}, function(jsonData) 
+		{
+			$min = jsonData['RASMinima'];
+			
+			
+		        var data = new google.visualization.DataTable();
+		        data.addColumn('string', 'Month');
+		        data.addColumn('number', 'Min');
+		        data.addColumn('number', 'Avg');
+		        data.addColumn('number', 'Max');
+		        
+		        data.addRows([
+		          ['Jan', parseInt(jsonData['RASMinima']),  parseInt(jsonData['RASMeanima']), parseInt(jsonData['RASMaxima']) ],
+		          ['Feb', parseInt(jsonData['RASMinima']),  parseInt(jsonData['RASMeanima']), parseInt(jsonData['RASMaxima']) ],
+		          ['Mar', parseInt(jsonData['RASMinima']),  parseInt(jsonData['RASMeanima']), parseInt(jsonData['RASMaxima']) ],
+		          ['Apr', parseInt(jsonData['RASMinima']),  parseInt(jsonData['RASMeanima']), parseInt(jsonData['RASMaxima']) ],
+		          ['May', parseInt('20'),  parseInt('60'), parseInt('80') ],
+		          ['Jun', parseInt('40'),  parseInt('50'), parseInt('60') ]
+		        ]); 
+			
+
+		
+	        var options = {
+	          title: 'RAS (Risk Assessment Score) 2013',
+	          hAxis: {title: 'Month', titleTextStyle: {color: 'red'}},
+	          vAxis: {maxValue: 100}
+	        };
+	
+	        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	        chart.draw(data, options);
+        
+		}); // end $.getJSON
+      } // end drawChart
+      
+      
+            
+    </script>
+  </head>
+  <body>
+  
+  <form id="RAS_Extrema_Form" action="" method="get">
+
+	User ID:    <input type="text" id="userid" /> <br />		<!-- Patient's ID -->
+	    
+	<input type="submit" id="submitButton" value="Submit"/>		<br />
+	
+  </form>
+  
+  <h5> Hard-coding the userid in this div for now: </h5>
+  <div id="userid">2</userid>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

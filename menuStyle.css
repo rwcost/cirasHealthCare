@@ -1,0 +1,236 @@
+/*
+ * CSS Style for Main Page
+ * CIRAS Cardiac Illness Risk Assessment System
+ * Author: GabMaster
+ */
+
+
+body
+{
+
+	font-family:Helvetica;
+	background-repeat:no-repeat;
+	background-position:left top;
+	margin: 30px;
+	padding:35px;
+	background-image:url('http://www.cirasheartcare.com/gabmaster/images/ekg.bmp');
+	background-repeat:no-repeat;
+	background-position:left;
+	background-size:100% 100%;
+}
+caption {caption-side:top;}
+
+#patientExtrema 
+{ 
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse:collapse;
+}
+
+#patientExtrema td
+{ 
+	border:2px solid navy;
+	font-size:1em;
+	padding:3px 7px 2px 7px;
+}
+
+
+#sub-body{
+	padding:35px;
+	background-color:ghostWhite;
+	background-position:left;
+	background-size:100% 100%;
+}
+#ciRas_title:before
+{
+	margin: 5px 50px 10px 15px;
+	verticle-align: center;
+	content:url('http://www.cirasheartcare.com/gabmaster/images/ciRas_title_small.png');
+	background-repeat:no-repeat;
+	display:block;
+	float:left;
+}
+#ciRas_head_banner:after
+{
+	font-family:Helvetica;
+	content:url('http://www.cirasheartcare.com/gabmaster/images/ciRas_Logo_tiny.bmp');
+	background-repeat:no-repeat;
+	background-position:left bottom;
+
+	height:50px;
+}
+
+#cssmenu
+{ 
+	height:50px; 
+	display:block; 
+	padding:0;
+	margin-top:0px; 
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 20px;
+	border:1px solid; 
+	border-radius:5px; 
+	float:left;
+	width: 100%;
+} 
+#cssmenu > ul 
+{
+	list-style:inside none; 
+	padding:0;
+	margin:0;
+} 
+#cssmenu > ul > li 
+{
+	list-style:inside none; 
+	padding:0;
+	margin-bottom:5px; 
+	vertical-align:bottom;
+	float:right; 
+
+	display:block; 
+	position:relative;
+} 
+#cssmenu > ul > li > a
+{
+	outline:none; 
+	display:block; 
+	position:relative; 
+	padding:18px 20px; 
+	font:bold 13px/100% Arial, Helvetica, sans-serif; 
+	text-align:center; 
+	text-decoration:none; 
+	text-shadow:1px 1px 0 rgba(0,0,0, 0.4); 
+} 
+#cssmenu > ul > li:first-child > a
+{
+	border-radius:5px 0 0 5px;
+} 
+#cssmenu > ul > li > a:after
+{
+	content:''; 
+	position:absolute; 
+	border-right:1px solid; 
+	top:-1px; 
+	bottom:-1px; 
+	right:-2px; 
+	z-index:99;
+} 
+#cssmenu ul li.has-sub:hover > a:after
+{
+	top:0;
+	bottom:0;
+} 
+#cssmenu > ul > li.has-sub > a:before
+{
+	content:''; 
+	position:absolute; 
+	top:18px; 
+	right:6px; 
+	border:5px solid transparent; 
+	border-top:5px solid #fff; 
+ } 
+#cssmenu > ul > li.has-sub:hover > a:before
+{
+	top:19px;
+} 
+#cssmenu ul li.has-sub:hover > a
+{
+	background:#3f3f3f; 
+	border-color:#3f3f3f; 
+	padding-bottom:13px; 
+	padding-top:13px; 
+	top:-1px; 
+	z-index:999; 
+} 
+
+#cssmenu ul li.has-sub:hover > ul, #cssmenu ul li.has-sub:hover > div
+{
+	display:block;
+} 
+#cssmenu ul li.has-sub > a:hover
+{
+	background:#3f3f3f; 
+	border-color:#3f3f3f;
+} 
+#cssmenu ul li > ul, #cssmenu ul li > div
+{ 
+	display:none; 
+	width:auto; 
+	position:absolute; 
+	top:45px; 
+	padding:10px 0; 
+	background:#3f3f3f; 
+	border-radius:0 0 5px 5px; 
+	z-index:999;
+ } 
+#cssmenu ul li > ul
+{
+	width:200px;
+} 
+#cssmenu ul li > ul li
+{
+	display:block; 
+	list-style:inside none; 
+	padding:0; 
+	margin:0; 
+	position:relative;
+} 
+#cssmenu ul li > ul li a
+{ 
+	outline:none; 
+	display:block; 
+	position:relative; 
+	margin:0; padding:8px 20px; 
+	font:10pt Arial, Helvetica, sans-serif; 
+	color:#fff; text-decoration:none; 
+	text-shadow:1px 1px 0 rgba(0,0,0, 0.5);
+} 
+ 
+#cssmenu, #cssmenu > ul > li > ul > li a:hover
+{ 
+	background:#c75bc5; 
+	background:-moz-linear-gradient(top,  #c75bc5 0%, #a14da8 100%); 
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#c75bc5), color-stop(100%,#a14da8)); 
+	background:-webkit-linear-gradient(top, #c75bc5 0%,#a14da8 100%); 
+	background:-o-linear-gradient(top, #c75bc5 0%,#a14da8 100%); background:-ms-linear-gradient(top, #c75bc5 0%,#a14da8 100%); 
+	background:linear-gradient(top, #c75bc5 0%,#a14da8 100%); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c75bc5', endColorstr='#a14da8',GradientType=0); 
+ } 
+#cssmenu
+{
+	border-color:#723778;
+} 
+
+#cssmenu > ul > li > a
+{
+	border-right:1px solid #723778; 
+	color:#fff;
+} 
+#cssmenu > ul > li > a:after
+{
+	border-color:#f68bf6;
+} 
+#cssmenu > ul > li > a:hover
+{
+	background:#9d489d;
+} 
+
+/* Red Tool Bar  ***
+#cssmenu, #cssmenu > ul > li > ul > li a:hover
+{ 
+background:#e0541d; 
+background:-moz-linear-gradient(top,  #e0541d 0%, #c23919 100%); 
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#e0541d), color-stop(100%,#c23919)); 
+background:-webkit-linear-gradient(top,  #e0541d 0%,#c23919 100%); 
+background:-o-linear-gradient(top,  #e0541d 0%,#c23919 100%); 
+background:-ms-linear-gradient(top,  #e0541d 0%,#c23919 100%); 
+background:linear-gradient(top,  #e0541d 0%,#c23919 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0541d', endColorstr='#c23919',GradientType=0 );
+ } 
+#cssmenu{border-color:#912b14;} 
+#cssmenu > ul > li > a
+{border-right:1px solid #912b14; color:#fff;} 
+#cssmenu > ul > li > a:after
+{border-color:#ff723b;} 
+#cssmenu > ul > li > a:hover
+{background:#b03d18;} 
+
+*/

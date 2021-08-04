@@ -1,0 +1,29 @@
+ 
+ 
+ /** Script to grab JSON data 
+ "RASMaxima":"0","hdlMaxima":"0","ldlMaxima":"0","systolicMaxima":"0","diastolicMaxima":"0","RASMinima":"0","hdlMinima":"0","ldlMinima":"0","systolicMinima":"0","diastolicMinima":"0","RASMeanima":"0.0000","hdlMeanima":"0","ldlMeanima":"0.0000","systolicMeanima":"0","diastolicMeanima":"0.0000"
+*/
+
+ // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var jsonData = $.ajax({
+          url: "http://cirasheartcare.com/gabmaster/dataPage.php",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // google.visualization.drawChart(jsonData);
+      
+      // Create our data table out of JSON data loaded from server.
+      var data = new google.visualization.DataTable(jsonData);
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, {width: 400, height: 240});
+    }
+	

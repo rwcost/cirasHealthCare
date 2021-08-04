@@ -1,0 +1,132 @@
+<!--
+ * File: /bob/index.html
+ * Authors: Bob Cost & Gabrielle Vanderburgh
+ * Course: CS 4800: Web Info Systems, Prof. Amit Sheth. WSU.
+ 
+ * When "submit" button clicked, request made for user's CIRAS HealthCare data.
+ * User specified by the "userid" field.
+ * Response received via execution of 'front.js' script, which calls 'dataPage.php' to form
+ * JSON-encoded data response, which includes all of the user's healthcare data (RAS, HDL, etc.)
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title> CIRAS Heart Care </title>
+    <link rel="stylesheet" type="text/css" href="style/menuStyle.css">		 <!-- Styles -->
+    <link rel="icon" type="image/x-icon" href="images/ciras_website.ico" />	 <!-- FavIcon -->
+    
+    <meta name="application-name" content="CIRAS">
+    <meta name="description" content="Cardiac Illness Risk Assessment System">
+    <meta name="author" content="GabMaster">
+    <meta name="keywords" content="cardiac health, ras, framingham, heartcare"> <!-- Keywords for Search Engines -->
+
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    
+    <meta content="utf-8" http-equiv="encoding">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+        
+     
+    <script src="fetchPatientData.js" type="text/javascript"></script>
+    <script src="/gabmaster/ciRasBarCharts/front.js" type="text/javascript"></script>
+         
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  
+    <script type="text/javascript"> google.load('visualization', '1', {packages: ['table', 'columnchart']}); 
+    </script>
+    
+    <script type="text/javascript">  google.setOnLoadCallback(drawVisualization);   	
+    </script>
+    
+  
+ 
+</head>
+
+<body style="font-family: Arial;border: 0 none;">
+
+	<div id="ciRas_head_banner"> </div>
+	<div id='cssmenu'>			<!--- Tabs --->
+	<ul>	
+	   <li class='active '><a href='index.html'><span>Home</span></a></li>
+	   
+	   <li><a href='ciRasBarCharts/RAS_Extrema.html?&userid='><span>RAS</span></a></li>
+	   <li class='has-sub '><a href='#'><span>Blood Pressure</span></a>
+	      <ul>
+	         <li><a href='#'><span>Diastolic</span></a></li>
+	         <li><a href='#'><span>Systolic</span></a></li>
+	      </ul>
+	   </li>
+	   <li class='has-sub '><a href='#'><span>Cholesterol</span></a>
+	      <ul>
+	         <li><a href='#'><span>LDL</span></a></li>
+	         <li><a href='#'><span>HDL</span></a></li>
+	      </ul>
+	   </li>
+	   <li id="myProfile"><a href='#'><span>My Profile</span></a></li>
+	   <li id="ciRas_title"><a href='#'></a> </li>
+	</ul>
+	</div>
+
+	
+	<div id="responseDiv"> </div>
+
+	<div id="averageContent"> </div>		<br />
+
+	<div id="sub-body">
+	    <div id="chart_div"> </div>
+	
+	       <!--Div to contain the Google Table Chart-->
+	    <div id="table_div"> </div>
+
+
+	<h3> Enter Patient ID and click the "submit" button to query the MySQL server. </h3>
+	
+	<!-- Form for patientID submission; NOTE: table must be w/in <form> tags in order to populate -->
+	<form id="cirasForm" action="dataPage.php" method="get">
+
+		User ID:    <input type="text" id="userid" /> <br />		<!-- Patient's ID -->
+	    
+		<input type="submit" id="submitButton" value="Submit"/>		<br />
+		<input type="button" id="send" value="Send request for CIRAS data" onclick="fetchPatientData()"/>
+	
+	 	<h7> Patient-Div </h7>	<div id="patientDiv"></div>
+	
+	 	<table id="patientExtrema"> 
+	 	<caption> Patient Extrema </caption>
+	 	<tr>
+	 	<th colspan="2"> Extrema </th>
+	 	</tr>
+		<tr>
+		<td> RAS Maximum: </td> <td id="maxRAS"> </td>
+		<td> RAS Minimum: </td> <td> </td>
+		</tr>
+		<tr>
+		<td> LDL Maximum: </td> <td id="maxLDL"> </td>
+		<td> LDL Minimum: </td> <td> </td>
+		</tr>
+		<tr>
+		<td> HDL Maximum: </td> <td id="maxHDL"> </td>
+		<td> HDL Minimum: </td> <td> </td>
+		</tr>
+		<tr>
+		<td> Systolic Maximum: </td> <td> </td>
+		<td>  Systolic Minimum: </td> <td> </td>
+		</tr>
+		<tr>
+		<td> Diastolic Maximum: </td> <td> </td>
+		<td> Diastolic Minimum: </td> <td> </td>
+		</tr>
+	 	</table>
+	</form>
+
+    <div>The Original Data Table</div>
+    <div id="table"></div>
+    <br />
+    <div>A Data View Chart</div>
+    <div id="chart"></div>
+ 	
+</div> <!-- Close for #sub-body -->
+
+</body>
+</html>
