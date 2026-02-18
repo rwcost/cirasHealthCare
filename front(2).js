@@ -1,6 +1,6 @@
 /**
  * File: /bob/front.js
- * Authors: Bob Cost & Gabrielle Vanderburgh
+ * Authors: Bob Cost
  * Course: CS 4800: Web Info Systems, Prof. Amit Sheth. WSU.
  * This page of JavaScript is included in "bob/index.html". 
  * When the page is ready, this script executes an anonymous function which makes a
