@@ -1,7 +1,7 @@
 	
 /*
  * Filename: fetchPatientData.js
- * Author: GRobert Cost
+ * Author: Robert Cost
  * Professor: Dr. Amit Sheth
  * CS 4900: Web Info Systems
  * Final Project: CIRAS HealthCare - Cardiac Risk Tracking
