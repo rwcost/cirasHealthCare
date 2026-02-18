@@ -1,5 +1,5 @@
 /* 
- * Author: GabMaster -- for CIRAS
+ * Author: Bob Cost-- for CIRAS
  * Grab all submitted vitals records for a single patient (whose id is 'userid')
  * Goal: Display all data points in a line-chart-- all on one graph, then add options to display 1-at-a-timw
  */
