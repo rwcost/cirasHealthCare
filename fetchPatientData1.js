@@ -2,8 +2,7 @@
 /*
  * Filename: fetchPatientData.js
  * Author: Robert Cost
- * Professor: Dr. Amit Sheth
- * CS 4900: Web Info Systems
+ 
  * Final Project: CIRAS HealthCare - Cardiac Risk Tracking
  *
  * This JS file retrieves the JSON-encoded associative array of patient data,
